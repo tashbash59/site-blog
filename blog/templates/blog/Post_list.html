@@ -5,13 +5,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>First page</title>
 </head>
-<body style = "background-color:#023E85">
-	<div>
-		<h1>Its first post</h1>
-		<p>Today I make my first site-blog and this first post in my blog. Thx if u read this text</p>
-		<h1>Its second post</h1>
-		<p>it's second post for example. Good bye!</p>
+<body style = "background-color:#023E85" >
 
+{% for post in posts %}
+	<div>
+		<p>published: {{ post.published_date}}</p>
+		<h1>{{ post.title}}</h1>
+		<p>{{ post.text|linebreaksbr}}</p>
 	</div>
+{%endfor%}
 </body>
 </html>
